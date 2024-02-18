@@ -34,7 +34,10 @@
     iframe.style.padding = "0";
     iframe.style.overflow = "hidden";
     iframe.style.zIndex = "999999";
-    win?.document.body.appendChild(iframe);
+    // Check if win is not null before accessing its document property
+    if (win !== null && typeof win.document !== 'undefined') {
+      win.document.body.appendChild(iframe);
+    }
   }
 </script>
 
